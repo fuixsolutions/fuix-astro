@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="132px" viewBox="0 0 100 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="58.2990398%" y1="0%" x2="41.7009602%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#5A6300" offset="0%"></stop>
+            <stop stop-color="#E7FF00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="favicon" transform="translate(-75.000000, -59.000000)">
+            <g id="Group-2" transform="translate(75.000000, 59.000000)">
+                <path d="M33,51 L33,51 L33,99 C33,117.225397 18.2253967,132 -4.876075e-14,132 L-5.68434189e-14,132 L-5.68434189e-14,84 C-5.90753862e-14,65.7746033 14.7746033,51 33,51 Z" id="Rectangle" fill="url(#linearGradient-1)"></path>
+                <path d="M33,0 L100,0 L100,0 C100,18.2253967 85.2253967,33 67,33 L-5.68434189e-14,33 L-5.68434189e-14,33 C-5.90753862e-14,14.7746033 14.7746033,2.23196738e-15 33,0 Z" id="Rectangle" fill="#E7FF00"></path>
+                <path d="M33,50 L83,50 L83,50 C83,68.2253967 68.2253967,83 50,83 L-5.68434189e-14,83 L-5.68434189e-14,83 C-5.90753862e-14,64.7746033 14.7746033,50 33,50 Z" id="Rectangle" fill="#E7FF00"></path>
+            </g>
+        </g>
+    </g>
+</svg>

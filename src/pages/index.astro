@@ -1,62 +1,103 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import ContentInverted from '~/components/widgets/ContentInverted.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Fuix',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
-  <Hero
+  <Hero2
+    tagline=""
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
         target: '_blank',
-        icon: 'tabler:download',
+        text: 'Get Started',
+        href: 'https://github.com/onwidget/astrowind',
       },
-      { text: 'Learn more', href: '#features' },
+      { variant: 'secondary', text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{
+      src: '~/assets/images/fuix-hero.jpg',
+      alt: 'AstroWind Hero Image',
+    }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      Accelerate Your Growth with Smart <br />
+      <span class="text-accent dark:text-primary highlight">Digital Solutions</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+        We seamlessly integrate and optimize digital tools to let you focus on what truly matters: <span
+          class="font-semibold dark:text-primary">your business</span
+        >.
+      </span>
     </Fragment>
-  </Hero>
-
+  </Hero2>
   <!-- Note Widget ******************* -->
 
   <Note />
 
+  <!-- Testimonials Widget *********** -->
+  <Testimonials
+    title="What our users say?"
+    testimonials={[
+      {
+        testimonial: `Fuix has been a game-changer for my business. Now our logistics are more efficient and our customers are happier than ever. I can't recommend it enough!`,
+        name: 'Fabián Guzmán',
+        job: 'Anteros S.A.',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Cary Kennedy Image',
+        },
+      },
+      {
+        testimonial: `They really show that they care about my Business. I've never seen such a level of understanding in a tech company before.`,
+        name: 'Jose Panatt',
+        job: 'Viaja Estudia',
+        image: {
+          src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Josh Wilkinson Image',
+        },
+      },
+      {
+        testimonial:
+          'You can tell the level of experience behind their work. They really know what they are doing and they do it well.',
+        name: 'Sidney Hansen',
+        job: 'Decorator',
+        image: {
+          src: 'https://images.unsplash.com/photo-1512361436605-a484bdb34b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Sidney Hansen Image',
+        },
+      },
+    ]}
+    callToAction={{
+      // target: '_blank',
+      // text: 'Read more testimonials',
+      // href: 'https://github.com/onwidget/astrowind',
+      // icon: 'tabler:chevron-right',
+    }}
+  />
   <!-- Features Widget *************** -->
 
-  <Features
+  <!-- <Features
     id="features"
     tagline="Features"
     title="What you get with AstroWind"
@@ -99,48 +140,65 @@ const metadata = {
         icon: 'tabler:bulb',
       },
     ]}
-  />
+  /> -->
 
   <!-- Content Widget **************** -->
+  <section class="bg-primary">
+    <ContentInverted
+      isReversed
+      tagline="Lets get to work"
+      title="What We can do for You?"
+      items={[
+        {
+          title: 'DevOps',
+          icon: 'tabler:server-2',
+          callToAction: {
+            text: 'Learn more',
+            href: '/services/devops',
+          },
+          description:
+            'Leverage the power of automation and collaboration to streamline your development process and deliver high-quality software.',
+        },
+        {
+          title: 'Low Code / No Code',
+          icon: 'tabler:code-minus',
+          callToAction: {
+            text: 'Learn more',
+            href: '/services/low-code-no-code',
+          },
+          description:
+            'Build and integrate applications with minimal coding, empowering your team to create solutions faster and more efficiently.',
+        },
+        {
+          title: 'Minimum Viable Products',
+          icon: 'tabler:versions',
+          callToAction: {
+            text: 'Learn more',
+            href: '/services/mvp',
+          },
+          description:
+            'Launch your product quickly and cost-effectively, enabling you to gather feedback and iterate based on real-world insights.',
+        },
+      ]}
+      image={{
+        src: '~/assets/images/services.jpg',
+        alt: 'Our Services',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-gray-800 sm:text-3xl mb-2">
+          Find the right solution for your business
+        </h3>
+        Let us guide you through the process of creating a digital solution that meets your needs.
+      </Fragment>
 
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 4.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </ContentInverted>
+  </section>
   <!-- Content Widget **************** -->
-
+  <!-- 
   <Content
     isAfterContent
     items={[
@@ -174,10 +232,10 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
-
+  <!-- 
   <Content
     isReversed
     isAfterContent
@@ -212,10 +270,10 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
-
+  <!-- 
   <Steps
     title="Get your dream website up and running in no time with AstroWind."
     items={[
@@ -246,10 +304,10 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
-
+  <!-- 
   <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
@@ -310,7 +368,7 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- HighlightedPosts Widget ******* -->
 

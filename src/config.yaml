@@ -1,22 +1,22 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Fuix Solutions
+  site: 'https://fuix.cl'
   base: '/'
   trailingSlash: false
-
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+# TODO: replace:
+  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M 
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Fuix Solutions
+    template: '%s — Fuix'
+  description: "\U0001F680 Fuix (Fullstack · UI · UX) is a software development company that specializes in creating custom software solutions. We are a team of experienced developers who are passionate about creating high-quality software that meets the needs of our clients."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Fiux Solutions
     images:
       - url: '~/assets/images/default.png'
         width: 1200
