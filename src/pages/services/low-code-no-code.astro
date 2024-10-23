@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogByTags from '~/components/widgets/BlogByTags.astro';
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'Low Code / No Code',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Low Code / No Code"
+    subtitle="Build apps faster and smarter – without extensive coding."
+    actions={[
+      { variant: 'primary', text: 'Call to Action', href: '#', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Learn more', href: '#' },
+    ]}
+    image={{
+      width: 1024,
+      height: 600,
+      src: '~/assets/images/low-code-no-code.png',
+      alt: 'Click-through Landing Page Hero Image',
+    }}
+  >
+    <Fragment slot="title">
+      Supercharge Your Business with <br />
+      <span class="text-accent dark:text-primary highlight">Low Code / No Code</span>
+    </Fragment>
+  </Hero2>
+  <Content
+    title="Low Code / No Code"
+    subtitle="We've helped numerous businesses automate processes without a single line of code."
+    isReversed
+    items={[
+      {
+        title: 'Faster Development',
+        description: 'Skip the lengthy traditional development cycle and build apps quickly.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Cost-Effective',
+        description: 'Save on development costs with NoCode and LowCode platforms.',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: 'Easy Integration',
+        description: 'Seamlessly integrate with popular platforms such as Jumpseller, WooCommerce, or Google Sheets.',
+        icon: 'tabler:automation',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/automation.jpg',
+      alt: 'Low Code / No Code Solutions',
+      width: 800,
+      height: 650,
+      variant: 'cover',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-primary sm:text-3xl mb-2">Why Low Code / No Code?</h3>
+    </Fragment>
+    <Fragment slot="content">
+      <p class="tracking-tight text-gray-50 mb-2">
+        Our Low Code / No Code services allow businesses to accelerate development with customizable, easy-to-use
+        platforms. Whether you want to automate workflows or develop full-scale applications, we empower your team to
+        innovate without needing a full-stack developer.
+      </p>
+    </Fragment>
+  </Content>
+  <BlogByTags
+    linkUrl={'/category/low-code-no-code'}
+    title="Explore all Low Code / No Code Case Studies"
+    linkText="All Low Code / No Code Posts"
+    information={`Read our latest Low Code / No Code case studies and learn how we helped our clients achieve their goals.`}
+    postIds={['devops-case.md', 'astrowind-template-in-depth.mdx', 'landing.md']}
+  />
+  <CallToAction
+    title="Coming soon"
+    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Template',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>

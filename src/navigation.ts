@@ -6,24 +6,25 @@ export const headerData = {
       text: 'Services',
       links: [
         // TODO: create the page
+        // https://www.dynatrace.com/monitoring/solutions/devops/
         {
           text: 'DevOps',
-          href: getPermalink('/homes/devops'),
+          href: getPermalink('/services/devops'),
         },
         {
-          text: 'LowCode / NoCode',
-          href: getPermalink('/homes/lowcode-nocode'),
+          text: 'Low Code / No Code',
+          href: getPermalink('/services/low-code-no-code'),
         },
         {
           text: 'Minimum Viable Products (MVP)',
-          href: getPermalink('/homes/mobile-app'),
+          href: getPermalink('/services/mvp'),
         },
       ],
     },
     {
       // TODO: create the page
-      text: 'Pricing',
-      href: getPermalink('/pricing'),
+      text: 'About Us',
+      href: getPermalink('/about'),
       // links: [
         // {
         //   text: 'Features (Anchor Link)',
@@ -117,7 +118,7 @@ export const headerData = {
     // },
     {
       // TODO: create the page
-      text: '📅 Events',
+      text: 'Events',
       href: '#',
       links: [
         {

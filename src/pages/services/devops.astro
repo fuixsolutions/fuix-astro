@@ -1,0 +1,145 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import ContentInverted from '~/components/widgets/ContentInverted.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import BlogByTags from '~/components/widgets/BlogByTags.astro';
+
+const allPosts = await Astro.glob('~/content/post/*.md');
+const devOpsPosts = allPosts.filter((post) => post.frontmatter.tags.includes('devops'));
+
+const metadata = {
+  title: 'Product Details Landing Page Demo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="DevOps Services"
+    actions={[{ variant: 'primary', text: 'Get Started Today', href: '#', icon: 'tabler:square-rounded-arrow-right' }]}
+    image={{
+      width: 1024,
+      src: '~/assets/images/devops.jpg',
+      alt: 'A spotlight on a product. Product Details Landing Page Demo',
+    }}
+  >
+    <Fragment slot="title">
+      Revolutionize Your Software Development with
+      <span class="text-accent dark:text-primary highlight">DevOps</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Speed, Efficiency, and Scalability – Unlock the full potential of your infrastructure with <span
+          class="font-semibold dark:text-primary">Fuix</span
+        >.
+      </span>
+    </Fragment>
+  </Hero2>
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Automated Infrastructure',
+        description: 'Reduce human error and time spent on repetitive tasks with infrastructure automation.',
+        icon: 'tabler:affiliate',
+      },
+      {
+        title: 'Scalability',
+        description: 'Build scalable cloud environments with efficient resource management.',
+        icon: 'tabler:chart-arrows-vertical',
+      },
+      {
+        title: 'Security Focused',
+        description: 'Implement security best practices and compliance from the start of development to release.',
+        icon: 'tabler:fingerprint',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/DevOpsLoop.png',
+      alt: 'DevOps Solutions',
+      width: 1200,
+      height: 650,
+      variant: 'cover',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-primary sm:text-3xl mb-2">Why DevOps?</h3>
+    </Fragment>
+    <Fragment slot="content">
+      <p class="tracking-tight text-white mb-2">
+        At <span class="font-semibold dark:text-primary">Fuix</span>, we bring together development and operations to
+        accelerate your software delivery. We help automate your infrastructure, streamline workflows, and ensure
+        continuous integration and deployment (CI/CD) for faster, error-free releases.
+      </p>
+    </Fragment>
+  </Content>
+  <section class="bg-primary">
+    <ContentInverted
+      tagline="DevOps Solutions"
+      title="Our DevOps Solutions Include"
+      items={[
+        {
+          title: 'CI/CD Pipeline Setup',
+          icon: 'tabler:topology-bus',
+          description:
+            'Automated pipelines for faster, reliable software delivery with minimal manual intervention, ensuring smooth updates and reduced deployment risks.',
+        },
+        {
+          title: 'Infrastructure as Code (IaC)',
+          icon: 'tabler:git-branch',
+          description:
+            'Automate cloud resource management using code (Terraform, Ansible), enabling scalable, repeatable infrastructure with version control and faster setup.',
+        },
+        {
+          title: 'Cloud Services Management (AWS, Azure, GCP)',
+          icon: 'tabler:cloud',
+          description:
+            'Manage and optimize cloud environments across AWS, Azure, and GCP, focusing on resource provisioning, cost-efficiency, and scalability.',
+        },
+        {
+          title: 'Monitoring & Logging Solutions',
+          icon: 'tabler:database-heart',
+          description:
+            'Implement real-time monitoring and logging (Prometheus, Grafana, ELK) for better performance tracking, troubleshooting, and issue prevention.',
+        },
+        {
+          title: 'DevSecOps Integration',
+          icon: 'tabler:shield-lock',
+          description:
+            'Embed security into the DevOps pipeline, automating checks to detect vulnerabilities early and ensuring compliance with security standards.',
+        },
+      ]}
+      image={{
+        height: 580,
+        src: '~/assets/images/docker.jpg',
+        alt: 'Docker Containers',
+      }}
+    />
+  </section>
+  <BlogByTags
+    linkUrl={'/category/devops'}
+    title="Explore all DevOps Case Studies"
+    linkText="All DevOps Posts"
+    information={`Read our latest DevOps case studies and learn how we helped our clients achieve their goals.`}
+    postIds={['devops-case.md', 'astrowind-template-in-depth.mdx', 'landing.md']}
+  />
+
+  <CallToAction
+    title="Coming soon"
+    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Template',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>

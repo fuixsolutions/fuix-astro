@@ -1,0 +1,144 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import ContentInverted from '~/components/widgets/ContentInverted.astro';
+import Features from '~/components/widgets/Features.astro';
+import BlogByTags from '~/components/widgets/BlogByTags.astro';
+
+const metadata = {
+  title: 'Sales Landing Page Demo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Minimum Viable Product"
+    actions={[
+      { variant: 'primary', text: 'Start Building Your MVP', href: '#', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Learn more', href: '#' },
+    ]}
+    image={{
+      width: '720',
+      height: '400',
+      src: '~/assets/images/mvp.webp',
+      alt: 'Children telling a story. Long-form Sales Landing Page demo',
+    }}
+  >
+    <Fragment slot="title">
+      Launch Your
+      <span class="text-accent dark:text-primary highlight">MVP</span>
+      Fast
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        From idea to market – we’ll help you build a <span class="font-semibold dark:text-primary">scalable MVP</span> in
+        no time.
+      </span>
+    </Fragment>
+  </Hero2>
+  <section class="bg-secondary">
+    <Content
+      isReversed
+      image={{
+        src: '~/assets/images/client-home.jpg',
+        alt: 'MVP Solutions',
+        width: 1200,
+        height: 650,
+        variant: 'cover',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-gray-800 sm:text-3xl mb-2">
+          Why Choose Fuix for <span class="bg-primary">MVP Development</span>?
+        </h3>
+      </Fragment>
+      <Fragment slot="content">
+        <p class="tracking-tight text-gray-600 mb-2">
+          We specialize in bringing your ideas to life through rapid MVP (Minimum Viable Product) development. We focus
+          on <span class="bg-primary">creating scalable, functional prototypes</span> that you can use to test your product
+          in the market quickly.
+        </p>
+      </Fragment>
+    </Content>
+  </section>
+  <Features
+    id="features"
+    columns={3}
+    items={[
+      {
+        title: 'Validate Faster',
+        description: 'Get your product to market quickly and gather real user feedback.',
+        icon: 'tabler:jetpack',
+      },
+      {
+        title: 'Cost-Effective Prototyping',
+        description: 'Build only the core features you need to launch and scale later.',
+        icon: 'tabler:cell',
+      },
+      {
+        title: 'End-to-End Development',
+        description: 'From ideation to deployment, we handle the entire process.',
+        icon: 'tabler:package',
+      },
+    ]}
+  />
+  <Content
+    tagline="MVP Solutions"
+    title="Our MVP Solutions Include"
+    isReversed
+    items={[
+      {
+        title: 'Frontend & Backend Development',
+        icon: 'tabler:brand-nodejs',
+      },
+      {
+        title: 'API Integrations',
+        icon: 'tabler:api',
+      },
+      {
+        title: 'Prototyping & Wireframing',
+        icon: 'tabler:grid-3x3',
+      },
+      {
+        title: 'Third-Party Tool Integration',
+        icon: 'tabler:hierarchy',
+      },
+      {
+        title: 'Cloud-Based MVP Solutions',
+        icon: 'tabler:cloud-rain',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/mvp.jpg',
+      alt: 'DevOps Solutions',
+      width: 800,
+      height: 650,
+      variant: 'cover',
+    }}
+  />
+  <BlogByTags
+    linkUrl={'/category/mvp'}
+    title="Explore all MVP Case Studies"
+    linkText="All MVP Posts"
+    information={`Read our latest MVP case studies and learn how we helped our clients achieve their goals.`}
+    postIds={['devops-case.md', 'astrowind-template-in-depth.mdx', 'landing.md']}
+  />
+  <CallToAction
+    title="Coming soon"
+    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Template',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>

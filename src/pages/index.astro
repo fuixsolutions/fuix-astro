@@ -13,6 +13,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 const metadata = {
   title: 'Fuix',
@@ -34,8 +35,10 @@ const metadata = {
       { variant: 'secondary', text: 'Learn more', href: '#features' },
     ]}
     image={{
+      width: 450,
+      height: 600,
       src: '~/assets/images/fuix-hero.jpg',
-      alt: 'AstroWind Hero Image',
+      alt: 'Fuix logo',
     }}
   >
     <Fragment slot="title">
@@ -64,8 +67,8 @@ const metadata = {
         name: 'Fabián Guzmán',
         job: 'Anteros S.A.',
         image: {
-          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          alt: 'Cary Kennedy Image',
+          src: '~/assets/images/anteros.png',
+          alt: 'Anteros S.A.',
         },
       },
       {
@@ -73,18 +76,18 @@ const metadata = {
         name: 'Jose Panatt',
         job: 'Viaja Estudia',
         image: {
-          src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          alt: 'Josh Wilkinson Image',
+          src: '~/assets/images/viajaestudia.png',
+          alt: 'Viaja Estudia',
         },
       },
       {
         testimonial:
           'You can tell the level of experience behind their work. They really know what they are doing and they do it well.',
-        name: 'Sidney Hansen',
-        job: 'Decorator',
+        name: 'Francisco Karmelic',
+        job: 'Helvetica Chile',
         image: {
-          src: 'https://images.unsplash.com/photo-1512361436605-a484bdb34b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          alt: 'Sidney Hansen Image',
+          src: '~/assets/images/helvetica.png',
+          alt: 'Helvetica',
         },
       },
     ]}
@@ -153,7 +156,9 @@ const metadata = {
           title: 'DevOps',
           icon: 'tabler:server-2',
           callToAction: {
-            text: 'Learn more',
+            text: 'Learn more about DevOps',
+            class:
+              'text-sm text-white bg-gray-900 font-semibold py-2 px-4 rounded hover:bg-secondary hover:text-black transition-colors duration-300',
             href: '/services/devops',
           },
           description:
@@ -163,7 +168,9 @@ const metadata = {
           title: 'Low Code / No Code',
           icon: 'tabler:code-minus',
           callToAction: {
-            text: 'Learn more',
+            text: 'Learn more about Low Code / No Code',
+            class:
+              'text-sm text-white bg-gray-900 font-semibold py-2 px-4 rounded hover:bg-secondary hover:text-black transition-colors duration-300',
             href: '/services/low-code-no-code',
           },
           description:
@@ -173,7 +180,9 @@ const metadata = {
           title: 'Minimum Viable Products',
           icon: 'tabler:versions',
           callToAction: {
-            text: 'Learn more',
+            text: 'Learn more about MVP',
+            class:
+              'text-sm text-white bg-gray-900 font-semibold py-2 px-4 rounded hover:bg-secondary hover:text-black transition-colors duration-300',
             href: '/services/mvp',
           },
           description:
@@ -181,6 +190,7 @@ const metadata = {
         },
       ]}
       image={{
+        height: 480,
         src: '~/assets/images/services.jpg',
         alt: 'Our Services',
       }}
@@ -382,7 +392,7 @@ const metadata = {
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
     tagline="FAQs"
@@ -419,7 +429,7 @@ const metadata = {
           "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
       },
     ]}
-  />
+  /> -->
 
   <!-- Stats Widget ****************** -->
 
